@@ -4,7 +4,7 @@ resource "aws_instance" "instance" {
   associate_public_ip_address = "${var.associate_public_ip_address}"
   instance_type = "${var.instance_type}"
   key_name = "${data.terraform_remote_state.account.key_pair_name}"
-  security_groups = ["${aws_security_group.security_group.name}"]
+  vpc_security_group_ids = ["${aws_security_group.security_group.id}"]
   subnet_id = "${element(data.terraform_remote_state.vpc.public_subnet_ids, 0)}"
 
   tags {
