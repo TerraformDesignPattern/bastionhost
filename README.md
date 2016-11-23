@@ -20,7 +20,7 @@ module "ami_image_id" {
 }
 
 module "bastion" {
-  source = "../../../../../../bastion/"
+  source = "git@github.com:TerraformDesignPattern/bastionhost.git"
 
   aws_account = "${module.environment.aws_account}"
   aws_region = "${module.environment.aws_region}"
