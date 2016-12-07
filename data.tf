@@ -1,3 +1,4 @@
+// Account Remote State
 data "terraform_remote_state" "account" {
   backend = "s3"
 
@@ -8,6 +9,7 @@ data "terraform_remote_state" "account" {
   }
 }
 
+// VPC Remote State
 data "terraform_remote_state" "vpc" {
   backend = "s3"
 
