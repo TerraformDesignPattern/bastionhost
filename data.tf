@@ -5,7 +5,7 @@ data "terraform_remote_state" "account" {
   config {
     bucket  = "${var.aws_account}"
     profile = "${var.aws_account}"
-    key     = "terraform.tfstate"
+    key     = "aws/terraform.tfstate"
     region  = "us-east-1"
   }
 }
@@ -17,7 +17,7 @@ data "terraform_remote_state" "vpc" {
   config {
     bucket  = "${var.aws_account}"
     profile = "${var.aws_account}"
-    key     = "${var.aws_region}/${var.vpc_name}/terraform.tfstate"
+    key     = "aws/${var.aws_region}/${var.vpc_name}/terraform.tfstate"
     region  = "us-east-1"
   }
 }
